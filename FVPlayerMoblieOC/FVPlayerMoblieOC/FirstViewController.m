@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import <AVFoundation/AVFoundation.h> // 基于AVFoundation,通过实例化的控制器来设置player属性
+#import <AVKit/AVKit.h>   // 1. 导入头文件   iOS 9 新增
 
 //step1. 导入QuickLook库和头文件
 #import <QuickLook/QuickLook.h>
@@ -18,10 +20,45 @@
 /** dirArray */
 @property (nonatomic, strong) NSMutableArray *dirArray;
 @property (nonatomic, strong) UIDocumentInteractionController *docInteractionController;
+
+
+@property (nonatomic, strong) AVPlayerViewController *playerViewController;
+
 @end
 
 @implementation FirstViewController
 
+#define VIDEO_TYPE @[@".mp4"]
+
+- (BOOL)isVideo:(NSString *)filePath
+{
+    for (NSInteger i = 0 ; i< VIDEO_TYPE.count ; i++) {
+
+        if ([filePath containsString: VIDEO_TYPE[i]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isDirectory:(NSString *)filePath
+{
+    BOOL isDirectory = NO;
+    [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+    return isDirectory;
+}
+
+#pragma mark - lazy init
+- (AVPlayerViewController *)playerViewController
+{
+    if (!_playerViewController) {
+        _playerViewController = [[AVPlayerViewController alloc] init];
+    }
+    return _playerViewController;
+}
+
+
+#pragma mark - life cycle
 
 - (void)viewDidLoad
 {
@@ -31,14 +68,19 @@
     
     //step6. 获取沙盒里所有文件
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    //在这里获取应用程序Documents文件夹里的文件及文件夹列表
-    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDir = [documentPaths objectAtIndex:0];
+    if (!_folderPath) {
+        
+        //在这里获取应用程序Documents文件夹里的文件及文件夹列表
+        NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentDir = [documentPaths objectAtIndex:0];
+        _folderPath = documentDir;
+    }
     NSError *error = nil;
     NSArray *fileList = [[NSArray alloc] init];
     //fileList便是包含有该文件夹下所有文件的文件名及文件夹名的数组
-    fileList = [fileManager contentsOfDirectoryAtPath:documentDir error:&error];
+    fileList = [fileManager contentsOfDirectoryAtPath:_folderPath error:&error];
     
+    NSLog(@"地址：%@,%@",_folderPath,fileList);
     self.dirArray = [[NSMutableArray alloc] init];
     for (NSString *file in fileList)
     {
@@ -108,13 +150,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    QLPreviewController *previewController = [[QLPreviewController alloc] init];
-    previewController.dataSource = self;
-    previewController.delegate = self;
     
-    // start previewing the document at the current section index
-    previewController.currentPreviewItemIndex = indexPath.row;
-    [[self navigationController] pushViewController:previewController animated:YES];
+    
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [documentPaths objectAtIndex:0];
+    NSString *path = [documentDir stringByAppendingPathComponent:[self.dirArray objectAtIndex:indexPath.row]];
+    if ([self isDirectory:path]) {
+        FirstViewController *vc = [[FirstViewController alloc]init];
+        vc.folderPath = path;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }else if ([self isVideo:path] ){
+        
+        self.playerViewController.player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:path]];
+        
+        [self presentViewController:_playerViewController animated:YES completion:nil];
+        
+    }else {
+        
+        QLPreviewController *previewController = [[QLPreviewController alloc] init];
+        previewController.dataSource = self;
+        previewController.delegate = self;
+        
+        // start previewing the document at the current section index
+        previewController.currentPreviewItemIndex = indexPath.row;
+        [[self navigationController] pushViewController:previewController animated:YES];
+    }
     //    [self presentViewController:previewController animated:YES completion:nil];
 }
 

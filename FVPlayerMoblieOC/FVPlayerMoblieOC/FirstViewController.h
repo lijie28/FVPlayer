@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
-
+/** <#name#> */
+@property (nonatomic, copy) NSString *folderPath;
 @end
