@@ -17,6 +17,7 @@
 		6A8289551FF4C492000DBC7A /* FVPlayerMoblieOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8289541FF4C492000DBC7A /* FVPlayerMoblieOCUITests.m */; };
 		6A8289651FF4C541000DBC7A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8289631FF4C541000DBC7A /* FirstViewController.m */; };
 		6A8289661FF4C541000DBC7A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8289641FF4C541000DBC7A /* FirstViewController.xib */; };
+		6A9358CA200DE90E00D7EFDD /* WKWebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9358C8200DE90E00D7EFDD /* WKWebviewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		6A8289621FF4C541000DBC7A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		6A8289631FF4C541000DBC7A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		6A8289641FF4C541000DBC7A /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		6A9358C8200DE90E00D7EFDD /* WKWebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebviewController.m; sourceTree = "<group>"; };
+		6A9358C9200DE90E00D7EFDD /* WKWebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebviewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 		6A82892C1FF4C492000DBC7A /* FVPlayerMoblieOC */ = {
 			isa = PBXGroup;
 			children = (
+				6A9358C7200DE90E00D7EFDD /* WKWebviewController */,
 				6A82892D1FF4C492000DBC7A /* AppDelegate.h */,
 				6A82892E1FF4C492000DBC7A /* AppDelegate.m */,
 				6A8289621FF4C541000DBC7A /* FirstViewController.h */,
@@ -136,6 +140,15 @@
 				6A8289561FF4C492000DBC7A /* Info.plist */,
 			);
 			path = FVPlayerMoblieOCUITests;
+			sourceTree = "<group>";
+		};
+		6A9358C7200DE90E00D7EFDD /* WKWebviewController */ = {
+			isa = PBXGroup;
+			children = (
+				6A9358C9200DE90E00D7EFDD /* WKWebviewController.h */,
+				6A9358C8200DE90E00D7EFDD /* WKWebviewController.m */,
+			);
+			path = WKWebviewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +287,7 @@
 			files = (
 				6A82892F1FF4C492000DBC7A /* AppDelegate.m in Sources */,
 				6A8289651FF4C541000DBC7A /* FirstViewController.m in Sources */,
+				6A9358CA200DE90E00D7EFDD /* WKWebviewController.m in Sources */,
 				6A8289401FF4C492000DBC7A /* main.m in Sources */,
 				6A8289381FF4C492000DBC7A /* FVPlayerMoblieOC.xcdatamodeld in Sources */,
 			);

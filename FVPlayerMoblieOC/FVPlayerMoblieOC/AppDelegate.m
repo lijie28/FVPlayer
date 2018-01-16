@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
+#import "WKWebviewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,8 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    FirstViewController *fVC = [[FirstViewController alloc]init];
+    WKWebviewController *fVC = [[WKWebviewController alloc]init];
+    fVC.strUrl = @"http://en.savefrom.net/";
     //设置窗口的根控制器
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:fVC];
     self.window.rootViewController = nav;
