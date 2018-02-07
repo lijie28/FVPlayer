@@ -22,6 +22,8 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
+/FVPlayerMoblieOC/Pods
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa

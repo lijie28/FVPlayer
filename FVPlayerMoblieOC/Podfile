@@ -1,0 +1,7 @@
+platform :ios, ‘8.0’
+ 
+target 'FVPlayerMoblieOC' do
+
+pod'JLeeTools','~> 0.1.3'
+
+end

@@ -24,8 +24,8 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    WKWebviewController *fVC = [[WKWebviewController alloc]init];
-    fVC.strUrl = @"http://en.savefrom.net/";
+    FirstViewController *fVC = [[FirstViewController alloc]init];
+//    fVC.strUrl = @"http://en.savefrom.net/";
     //设置窗口的根控制器
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:fVC];
     self.window.rootViewController = nav;

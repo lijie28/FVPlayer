@@ -18,6 +18,7 @@
 		6A8289651FF4C541000DBC7A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8289631FF4C541000DBC7A /* FirstViewController.m */; };
 		6A8289661FF4C541000DBC7A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8289641FF4C541000DBC7A /* FirstViewController.xib */; };
 		6A9358CA200DE90E00D7EFDD /* WKWebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9358C8200DE90E00D7EFDD /* WKWebviewController.m */; };
+		E9EA93E4DB650329AE9E296A /* libPods-FVPlayerMoblieOC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F3451813743DDB1B1FC93A /* libPods-FVPlayerMoblieOC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68BF3CC99805BEEDCA114B6A /* Pods-FVPlayerMoblieOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FVPlayerMoblieOC.release.xcconfig"; path = "Pods/Target Support Files/Pods-FVPlayerMoblieOC/Pods-FVPlayerMoblieOC.release.xcconfig"; sourceTree = "<group>"; };
 		6A82892A1FF4C492000DBC7A /* FVPlayerMoblieOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FVPlayerMoblieOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A82892D1FF4C492000DBC7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A82892E1FF4C492000DBC7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		6A8289641FF4C541000DBC7A /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 		6A9358C8200DE90E00D7EFDD /* WKWebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebviewController.m; sourceTree = "<group>"; };
 		6A9358C9200DE90E00D7EFDD /* WKWebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebviewController.h; sourceTree = "<group>"; };
+		9F0C269EE0E40614CAEAED61 /* Pods-FVPlayerMoblieOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FVPlayerMoblieOC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FVPlayerMoblieOC/Pods-FVPlayerMoblieOC.debug.xcconfig"; sourceTree = "<group>"; };
+		C3F3451813743DDB1B1FC93A /* libPods-FVPlayerMoblieOC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FVPlayerMoblieOC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EA93E4DB650329AE9E296A /* libPods-FVPlayerMoblieOC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +97,8 @@
 				6A8289481FF4C492000DBC7A /* FVPlayerMoblieOCTests */,
 				6A8289531FF4C492000DBC7A /* FVPlayerMoblieOCUITests */,
 				6A82892B1FF4C492000DBC7A /* Products */,
+				974706CE765488C0824F94AD /* Pods */,
+				DFDBE9B54514C5AB700136A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +158,23 @@
 			path = WKWebviewController;
 			sourceTree = "<group>";
 		};
+		974706CE765488C0824F94AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F0C269EE0E40614CAEAED61 /* Pods-FVPlayerMoblieOC.debug.xcconfig */,
+				68BF3CC99805BEEDCA114B6A /* Pods-FVPlayerMoblieOC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFDBE9B54514C5AB700136A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3F3451813743DDB1B1FC93A /* libPods-FVPlayerMoblieOC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A8289591FF4C492000DBC7A /* Build configuration list for PBXNativeTarget "FVPlayerMoblieOC" */;
 			buildPhases = (
+				59BB17C76BD0C04994BC2576 /* [CP] Check Pods Manifest.lock */,
 				6A8289261FF4C492000DBC7A /* Sources */,
 				6A8289271FF4C492000DBC7A /* Frameworks */,
 				6A8289281FF4C492000DBC7A /* Resources */,
+				77E0B8B373EF9A6797F2CBFE /* [CP] Embed Pods Frameworks */,
+				1DB3AA58FBD2C39DC697B5FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +306,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DB3AA58FBD2C39DC697B5FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FVPlayerMoblieOC/Pods-FVPlayerMoblieOC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59BB17C76BD0C04994BC2576 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FVPlayerMoblieOC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77E0B8B373EF9A6797F2CBFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FVPlayerMoblieOC/Pods-FVPlayerMoblieOC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6A8289261FF4C492000DBC7A /* Sources */ = {
@@ -450,6 +528,7 @@
 		};
 		6A82895A1FF4C492000DBC7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F0C269EE0E40614CAEAED61 /* Pods-FVPlayerMoblieOC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +544,7 @@
 		};
 		6A82895B1FF4C492000DBC7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68BF3CC99805BEEDCA114B6A /* Pods-FVPlayerMoblieOC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

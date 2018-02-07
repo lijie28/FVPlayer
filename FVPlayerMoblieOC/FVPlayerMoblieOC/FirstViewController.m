@@ -9,7 +9,7 @@
 #import "FirstViewController.h"
 #import <AVFoundation/AVFoundation.h> // 基于AVFoundation,通过实例化的控制器来设置player属性
 #import <AVKit/AVKit.h>   // 1. 导入头文件   iOS 9 新增
-
+#import "JLeeTools.h"
 //step1. 导入QuickLook库和头文件
 #import <QuickLook/QuickLook.h>
 
@@ -64,12 +64,14 @@
 {
     [super viewDidLoad];
     
-    
+    LOG_DEBUG(@"here you are");
     
     //step6. 获取沙盒里所有文件
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (!_folderPath) {
-        
+        if ([_folderPath hasValue]) {
+            LOG_DEBUG(@"[_folderPath hasValue]");
+        }
         //在这里获取应用程序Documents文件夹里的文件及文件夹列表
         NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentDir = [documentPaths objectAtIndex:0];
